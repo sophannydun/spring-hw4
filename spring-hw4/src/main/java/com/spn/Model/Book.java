@@ -1,10 +1,22 @@
 package com.spn.Model;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Book {
+	
+	
 	private int id;
+	
+	@NotEmpty(message= "Pleas input Name")
 	private String title;
 	private String publishDate;
 	private String author;
+
+	/*@Size(min=1,max=100,message="Please input between 1 to 100")*/
+	@Min(10)
 	private int page;
 	private String coverImage;
 	public int getId() {
